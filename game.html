@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+
+		.boxs {
+			height: 100px;
+			width: 100px;
+			background-image: url(road2.png);
+			border: solid;
+			position: absolute;
+		}
+		.firsBox {
+			background-color: white;
+			background-image: url(12.png);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="content">
+		<img style=" position: absolute; width: 1420px;
+		height: 540px; margin-top: 140px; background-image: url(desert.jpg); margin-left: 20px;"></img>
+		<h4 style="margin-left: 20px">Score: <span class="score"></span></h4>
+		<img src="kubik.png" class="bt" style="width: 100px; margin-left: 20px">		
+		<div class="boxs firsBox" style="margin-left: 20px">
+			<h4>finish</h4>
+		</div>
+		<div class="boxs" style="margin-left: 130px">1</div>
+		<div class="boxs" style="margin-left: 240px">2</div>
+		<div class="boxs" style="margin-left: 350px; background-image: url(kaktus1.png);">3</div>
+				
+		<div class="boxs" style="margin-left: 460px">4</div> 
+		<div class="boxs" style="margin-left: 570px">5</div>
+		<div class="boxs" style="margin-left: 680px;  background-image: url(kaktus1.png);">6</div>
+		<div class="boxs" style="margin-left: 790px">7</div>
+
+		<div class="boxs" style="margin-left: 900px">8</div>
+		<div class="boxs" style="margin-left: 1010px;background-image: url(kaktus1.png);" >9</div>
+		<div class="boxs" style="margin-left: 1120px">10</div>
+		<div class="boxs" style="margin-left: 1230px">11</div>
+
+		<div class="boxs" style="margin-left: 1340px;background-image: url(kaktus2.png);">12 
+			<p></p>
+		</div>
+		<div class="boxs" style="margin-left: 1340px; margin-top: 110px">13</div>
+		<div class="boxs" style="margin-left: 1340px; margin-top: 220px">14</div>	
+		<div class="boxs" style="margin-left: 1340px; margin-top: 330px">15</div>		
+
+		<div class="boxs" style="margin-left: 1340px; margin-top: 440px; background-image: url(coin.jpg); ">16</div>
+		<div class="boxs" style="margin-left: 1230px; margin-top: 440px">17</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 440px">18</div>
+		<div class="boxs" style="margin-left: 1010px; margin-top: 440px; background-image: url(kaktus1.png);">19</div>
+
+		<div class="boxs" style="margin-left: 900px; margin-top: 440px">20</div>
+		<div class="boxs" style="margin-left: 790px; margin-top: 440px; background-image: url(virus.jpg);">21</div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 440px">22</div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 440px;background-image: url(kaktus1.png);">23</div>
+
+		<div class="boxs" style="margin-left: 460px; margin-top: 440px">24</div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 440px">25</div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 440px;background-image: url(smert.png);">26</div>
+		<div class="boxs" style="margin-left: 130px; margin-top: 440px">27</div>
+
+		<div class="boxs" style="margin-left: 20px; margin-top: 440px">28</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 330px; background-image: url(kaktus2.png);">29</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 220px">30</div>	
+		<div class="boxs" style="margin-left: 20px; margin-top: 110px">31</div>		
+
+		<!--последние дивы-->
+		<div class="boxs" style="margin-left: 130px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 460px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 110px; background-color: green; opacity: 0"></div>
+
+	</div>
+
+	<script>
+		let btn = document.querySelector(".bt");
+		let bx = document.querySelectorAll(".boxs");
+		let sc = document.querySelector(".score");
+
+		
+		sco = 150;
+		sc.innerHTML = sco;
+		scoree = 0;
+		score = 0;
+		
+
+		
+	btn.onclick = function(){
+
+		let rand = Math.random() * 4;
+		let round = Math.round(rand);
+		alert(round  );		
+
+		score = round + score;
+		scoree = score - round;
+
+		bx[0].style.backgroundImage = "url(road2.png)";	
+		bx[score].style.backgroundImage = "url(1.png)";
+
+		
+		bx[scoree].style.backgroundImage = "url(road2.png)";
+
+		sco = sco + 20;
+		sc.innerHTML = sco;
+
+
+		if(round == 0) {
+
+			score = score;
+			scoree = scoree;
+
+			sco = sco - 20;
+			sc.innerHTML = sco;
+		
+			bx[score].style.backgroundImage = "url(1.png)";
+			bx[scoree].style.backgroundImage = "url(1.png)";
+
+			
+			
+
+		}
+
+		
+
+		if(score == 3 || score == 6 || score == 9 || score == 19 || score == 23   ) {
+
+			score = score - 1;
+			scoree = score + 1;
+			alert("Ты наткнулся на злого кактуса. Он отнял у тебя 30 очков и отправил на 1 шаг назад");
+
+			bx[score].style.backgroundImage = "url(1.png)";
+			bx[scoree].style.backgroundImage = "url(kaktus1.png)";
+
+			sco = sco - 50;
+			sc.innerHTML = sco;
+			
+
+		}
+
+		if(score == 12 || score == 29 ) {
+
+			score = score - 5;
+			scoree = score + 5;
+			alert("Ты наткнулся на супер злого кактуса. Он отнял у тебя 50 очков и отправил на 5 шагов назад");
+
+			bx[score].style.backgroundImage = "url(1.png)";
+			bx[scoree].style.backgroundImage = "url(kaktus2.png)";
+
+			sco = sco - 70;
+			sc.innerHTML = sco;
+			
+
+		}
+
+		if(score == 32 || score == 33 || score == 34 || score == 35 || score == 36 || score == 37  ) {
+
+			if(!alert('Krasavchik !' )){window.location.reload();}
+			
+
+		}
+
+		if(sco <= 0  ) {
+
+			if(!alert('Ne povezlo ne fortanulo !' )){window.location.reload();}
+			
+
+		}
+		if(score == 26  ) {
+
+			if(!alert('Ne povezlo ne fortanulo !' )){window.location.reload();}
+			
+
+		}
+		if(score == 16  ) {
+
+			alert("fortanulo. vot ti vezuchii +50 ochkov")
+			sco = sco + 50;
+			sc.innerHTML = sco;
+			
+
+		}
+
+		let bolnichka = function(){
+			if(!alert(' vizdoravlivai' )){window.location.reload();}
+		}
+		if(score == 21  ) {
+
+			alert("ti zabolel corovirusom cherez 8 sec ti poidesh v bolnichku")
+			sco = sco + 50;
+			sc.innerHTML = sco;
+			setTimeout(bolnichka,15000);
+			
+
+		}
+
+		let vremya = function(){
+			if(!alert(' che takoi dolgii' )){window.location.reload();}
+		}
+
+
+		setTimeout(vremya,60000);
+
+	
+
+
+		
+				
+		
+
+ 
+	}
+		
+	</script>	
+		
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+
+</script>
